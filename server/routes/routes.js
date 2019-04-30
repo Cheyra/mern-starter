@@ -2,14 +2,12 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-// (this name will change depending on what database you create)
+// this name will change depending on what database you create (see ../../models)
 var Name = require('../../models/index');
 
 //retrieves everything in database
 router.get('/', function(req, res){
   res.render('index')
-  // Name.find()
-  // .then(dbModel => res.json(dbModel))
 });
 
 // adds to database

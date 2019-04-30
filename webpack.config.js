@@ -1,3 +1,4 @@
+//this file allows front end and back end to communicate
 var path = require('path');
 var webpack = require('webpack');
 module.exports = {

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import { Button } from "react-materialize";
+import { Button, } from "react-materialize";
 import Add from "./apiComponents/Add";
 class Homepage extends React.Component {
   constructor() {
@@ -60,6 +60,7 @@ class Homepage extends React.Component {
               <th />
               <th className="desc-col">First Name</th>
               <th className="button-col">Last Name</th>
+            
             </tr>
           </thead>
           <tbody>
@@ -69,6 +70,8 @@ class Homepage extends React.Component {
                   <td className="counterCell" />
                   <td className="desc-col">{exp.first}</td>
                   <td className="button-col">{exp.last}</td>
+                  
+
                   <td>
                     {" "}
                     <Button value={exp._id} onClick={this.deleteRow}>
