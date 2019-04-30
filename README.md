@@ -1,7 +1,7 @@
 # mern-starter
 ### This is a starter file for a full stack MERN application. It can be edited and adapted depending on an individuals or organizations needs.
 
-To get started
+##### To get started
 1. Clone the repository
 2. Run npm install to download dependencies
 3. Edit the models file according to what type of database and field is needed 
