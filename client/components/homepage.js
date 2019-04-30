@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import {Button} from "react-materialize"
+import { Button } from "react-materialize";
 import Add from "./apiComponents/Add";
 class Homepage extends React.Component {
   constructor() {
@@ -35,11 +35,18 @@ class Homepage extends React.Component {
   }
   // deletes contents in row
   deleteRow(event) {
-    let id= event.target.value
-    axios.get("/delete/" + id).then(function(response) {
-
+    let id = event.target.value;
+    axios.get("/delete/" + id).then(function(response) {});
+    console.log("deleted");
+  }
+  // edits contents in row
+  editRow(event) {
+    let id = event.target.value;
+   let newName={ first: "ha", last: "ha"}
+    axios.post("/update/" + id, newName).then(function(response) {
+      console.log(response)
     });
-    console.log("deleted")
+    console.log("edited");
   }
   // renders info to web page
   render() {
@@ -62,7 +69,20 @@ class Homepage extends React.Component {
                   <td className="counterCell" />
                   <td className="desc-col">{exp.first}</td>
                   <td className="button-col">{exp.last}</td>
-                  <td> <Button value={exp._id}  onClick ={this.deleteRow}> Delete </Button> </td>
+                  <td>
+                    {" "}
+                    <Button value={exp._id} onClick={this.deleteRow}>
+                      {" "}
+                      Delete{" "}
+                    </Button>{" "}
+                  </td>
+                  <td>
+                    {" "}
+                    <Button value={exp._id} onClick={this.editRow}>
+                      {" "}
+                      Edit{" "}
+                    </Button>{" "}
+                  </td>
                 </tr>
               );
             })}

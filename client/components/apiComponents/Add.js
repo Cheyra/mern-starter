@@ -78,7 +78,7 @@ render() {
       return (
         <div>
      
-      <Button type="submit" waves="light" onClick={this.openModal}>
+      <Button type="submit"  onClick={this.openModal}>
 Add Name
 <Icon right>
 send

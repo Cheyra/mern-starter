@@ -27,14 +27,14 @@ name.save(function(err) {
 })
 
 // updates existing entry in database
-router.route('/update')
+router.route('/update/:id')
 .post(function(req, res) {
  const doc = {
   first: req.body.first,
   last: req.body.last
  };
  console.log(doc);
-  Name.update({_id: req.body._id}, doc, function(err, result) {
+  Name.update({_id: req.params.id}, doc, function(err, result) {
       if (err)
         res.send(err);
       res.send('Name successfully updated!');
