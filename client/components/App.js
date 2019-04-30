@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import Homepage from './homepage'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      
+      <h1> React starter-App </h1>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <Homepage/>
       </header>
     </div>
   );

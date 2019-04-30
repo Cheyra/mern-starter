@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 module.exports = {
     mode: 'development',
- entry: './client/index.js',
+ entry: ['babel-polyfill', './client/index.js'],
  output: {
   path: path.join(__dirname, 'client'),
   filename: 'bundle.js'
@@ -13,7 +13,10 @@ module.exports = {
    loader: 'babel-loader',
    exclude: /node_modules/,
    query: {
-    presets: ['@babel/preset-env', '@babel/react']
+    presets: ['@babel/preset-env', '@babel/react' ],
+    plugins: [
+        "@babel/plugin-proposal-class-properties"
+        ]
    }
   },
   {
