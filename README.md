@@ -1,5 +1,5 @@
 # mern-starter
-This is a starter file for a full stack MERN application. It can be edited and adapted depending on an individuals or organizations needs.
+### This is a starter file for a full stack MERN application. It can be edited and adapted depending on an individuals or organizations needs.
 
 To get started
 1. Clone the repository
