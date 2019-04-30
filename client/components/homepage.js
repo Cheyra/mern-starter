@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import {Button} from "react-materialize"
 import Add from "./apiComponents/Add";
 class Homepage extends React.Component {
   constructor() {
@@ -32,6 +33,14 @@ class Homepage extends React.Component {
   getData() {
     axios.get("/").then(function(response) {});
   }
+  // deletes contents in row
+  deleteRow(event) {
+    let id= event.target.value
+    axios.get("/delete/" + id).then(function(response) {
+
+    });
+    console.log("deleted")
+  }
   // renders info to web page
   render() {
     return (
@@ -53,6 +62,7 @@ class Homepage extends React.Component {
                   <td className="counterCell" />
                   <td className="desc-col">{exp.first}</td>
                   <td className="button-col">{exp.last}</td>
+                  <td> <Button value={exp._id}  onClick ={this.deleteRow}> Delete </Button> </td>
                 </tr>
               );
             })}

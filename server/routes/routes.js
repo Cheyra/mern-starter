@@ -42,9 +42,8 @@ router.route('/update')
 });
 
 // deletes an entry in database that contains specified unique id
-router.get('/delete', function(req, res){
- var id = req.query.id;
- Name.find({_id: id}).remove().exec(function(err, name) {
+router.get('/delete/:id'  , function(req, res){
+ Name.find({_id: req.params.id}).remove().exec(function(err, name) {
   if(err)
    res.send(err)
   res.send('Name successfully deleted!');
