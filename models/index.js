@@ -2,11 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // can change this schema to name of choosing and can edit 
 //and add fields but make sure to update routes(../server/routes)
-var schemaTicket = new Schema({
+var schemaName = new Schema({
   first: String,
-  last: String,
-  employeeID: Number,
-  description: String
+  last: String
   });
 
-module.exports = mongoose.model('Ticket', schemaTicket);
+module.exports = mongoose.model('Name', schemaName);
